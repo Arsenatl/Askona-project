@@ -45,11 +45,11 @@ function Discount() {
                 <SwiperSlide>
                     <div className="quality">
                         <div className="quality_left">
-                            <h1 className='quality_left_h1'>
+                            <h2 className='quality_left_h1'>
                                 {lang === 'ru' ? 'Пусть в вашем доме всегда будет уютно' : 'Uyingiz doimo shinam bo`lsin'}
-                            </h1>
+                            </h2>
                             <div className="quality_left_df">
-                                <h1 className='quality_left_df_h1'>5</h1>
+                                <h2 className='quality_left_df_h1'>5</h2>
                                 <h2 className='quality_left_df_h2'>%
                                     {lang === 'ru' ? 'Дополнительная скидка' : 'Qo`shimcha chegirma'}
                                 </h2>

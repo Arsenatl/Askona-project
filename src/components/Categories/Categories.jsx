@@ -64,6 +64,8 @@ function Categories() {
     }
     return (
         <div className="container">
+            <h1 className="text-center text-[30px] font-[900] leading-[24px] mb-[50px] mt-[10px]">Karniz va karniz aksesuarlar</h1>
+
             <Swiper {...swiperOption}>
                 {categries.map((item) => (
                     <SwiperSlide key={item.id}>

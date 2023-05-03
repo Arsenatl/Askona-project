@@ -33,7 +33,7 @@ function MainCarousel({ language }) {
 
   return (
     <div className="container">
-      <h1 className="title">{language?.yangi}</h1>
+      <h3 className="title">{language?.yangi}</h3>
       <Swiper
         style={{
           "--swiper-navigation-color": "#407CD3",
@@ -138,14 +138,14 @@ function MainCarousel({ language }) {
                     <div className="card__body-descLeft flex gap-[18.3px] items-center">
                       <VscSymbolRuler />
                       <div className="card__body-descInfo">
-                        <h2>{lang === 'ru' ? 'размер' : 'o`lchami'}:</h2>
+                        <h3>{lang === 'ru' ? 'размер' : 'o`lchami'}:</h3>
                         <p>{item.size} {lang === 'ru' ? 'см' : 'sm'}</p>
                       </div>
                     </div>
                     <div className="card__body-descRight flex gap-[14.53px] items-center">
                       <img src={Weight} alt="icon" />
                       <div className="card__body-descInfo">
-                        <h2>{lang === 'ru' ? 'Вес' : 'og`irligi'}</h2>
+                        <h3>{lang === 'ru' ? 'Вес' : 'og`irligi'}</h3>
                         <p>{item.weight} {lang === 'ru' ? 'kг' : 'kg'}</p>
                       </div>
                     </div>

@@ -10,6 +10,7 @@ import Telegram from '../../assets/svg/telegram.svg'
 import FinTech from '../../assets/svg/fintech.svg'
 import { useContactQuery } from '../../services/contact'
 import { StateContext } from '../../context'
+import { Link } from 'react-scroll'
 
 
 
@@ -27,7 +28,7 @@ function Footer({ language }) {
                     <div className="grid mobile:grid-cols-1 tablet:grid-cols-1 desktop:grid-cols-2 desktop:gap-10 tablet:gap-0 mobile:gap-0 desktop:divide-y-0 tablet:divide-y-2 mobile:divide-y-2 tablet:w-1/2 desktop:w-2/3 mobile:w-full">
                         <div className="w-full flex flex-col desktop:border-0 mobile:border-t-2 border-gray-200">
                             <div className="w-full flex flex-row justify-between items-center pl-1 mobile:py-2 desktop:py-0 tablet:py-3">
-                                <h1 className='font-bold text-2xl hover:bg-gray-200'>{language?.xaridor}</h1>
+                                <h3 className='font-bold text-2xl hover:bg-gray-200'>{language?.xaridor}</h3>
                                 <button className='hover:bg-gray-200 p-1 rounded-full active:scale-90' onClick={() => setShow1(p => !p)}>
                                     <MdOutlineKeyboardArrowDown className='desktop:hidden mobile:block tablet:block text-[#407CD3] text-xl' />
                                 </button>
@@ -43,7 +44,7 @@ function Footer({ language }) {
 
                         <div className="flex flex-col">
                             <div className="w-full flex flex-row justify-between items-center pl-1 mobile:py-2 desktop:py-0 tablet:py-3">
-                                <h1 className='font-bold text-2xl'>{language?.kompaniy}</h1>
+                                <h3 className='font-bold text-2xl'>{language?.kompaniy}</h3>
                                 <button className='hover:bg-gray-200 p-1 rounded-full active:scale-90' onClick={() => setShow2(p => !p)}>
                                     <MdOutlineKeyboardArrowDown className='desktop:hidden mobile:block tablet:block text-[#407CD3] text-xl' />
                                 </button>
@@ -59,7 +60,7 @@ function Footer({ language }) {
 
                         <div className="flex flex-col">
                             <div className="w-full flex flex-row justify-between items-center pl-1 mobile:py-2 desktop:py-0 tablet:py-3">
-                                <h1 className='font-bold text-2xl'>{language?.taklif}</h1>
+                                <h3 className='font-bold text-2xl'>{language?.taklif}</h3>
                                 <button className='hover:bg-gray-200 p-1 rounded-full active:scale-90' onClick={() => setShow3(p => !p)}>
                                     <MdOutlineKeyboardArrowDown className='desktop:hidden mobile:block tablet:block text-[#407CD3] text-xl' />
                                 </button>
@@ -75,7 +76,7 @@ function Footer({ language }) {
 
                         <div className="flex flex-col">
                             <div className="w-full flex flex-row justify-between items-center pl-1 mobile:py-2 desktop:py-0 tablet:py-3">
-                                <h1 className='font-bold text-2xl'>{language?.partnyor}</h1>
+                                <h3 className='font-bold text-2xl'>{language?.partnyor}</h3>
                                 <button className='hover:bg-gray-200 p-1 rounded-full active:scale-90' onClick={() => setShow4(p => !p)}>
                                     <MdOutlineKeyboardArrowDown className='desktop:hidden mobile:block tablet:block text-[#407CD3] text-xl' />
                                 </button>
@@ -91,18 +92,18 @@ function Footer({ language }) {
                     {contact?.data?.map((item, index) => (
                         <div key={index} className="flex flex-col gap-24">
                             <div className='flex flex-col items-center'>
-                                <h1 className="font-bold text-2xl">{language?.yangilik}</h1>
+                                <h3 className="font-bold text-2xl">{language?.yangilik}</h3>
                                 <div className="flex flex-row items-center justify-center gap-3 mt-3">
-                                    <a href={item?.facebook} target='_blank'>
+                                    <a href={item?.facebook} rel="canonical" target='_blank'>
                                         <img className='cursor-pointer hover:scale-110 duration-150 ' src={Facebook} alt="logo" />
                                     </a>
-                                    <a href={item?.instagram} target='_blank'>
+                                    <a href={item?.instagram} rel="canonical" target='_blank'>
                                         <img className='cursor-pointer hover:scale-110 duration-150' src={Instagram} alt="logo" />
                                     </a>
-                                    <a href={item?.youtube} target='_blank'>
+                                    <a href={item?.youtube} rel="canonical" target='_blank'>
                                         <img className='cursor-pointer hover:scale-110 duration-150' src={Youtube} alt="logo" />
                                     </a>
-                                    <a href={item?.telegram} target='_blank'>
+                                    <a href={item?.telegram} rel="canonical" target='_blank'>
                                         <img className='cursor-pointer hover:scale-110 duration-150' src={Telegram} alt="logo" />
                                     </a>
                                 </div>
@@ -140,7 +141,9 @@ function Footer({ language }) {
                     <p className='font-normal text-base'>{language?.maxfiylik}</p>
                     <div className="flex items-center gap-3">
                         <p className='font-normal text-base'>{language?.fintech}</p>
-                        <img className='h-6' src={FinTech} alt="logo" />
+                        <a href="https://fintechhub.uz/" target='blank'>
+                            <img className='h-6' src={FinTech} alt="logo" />
+                        </a>
                     </div>
                 </div>
             </div>

@@ -70,7 +70,7 @@ function Katalog() {
               <div className="bg-[#f4f4f4] h-32 w-32 rounded-full flex items-center justify-center group">
                 <img className='w-12 group-hover:scale-110 duration-200' src={item.img} alt="img" />
               </div>
-              <p className='font-medium text-base'>{lang === 'ru' ? item.name_ru : item.name_uz}</p>
+              <h2 className='font-medium text-base'>{lang === 'ru' ? item.name_ru : item.name_uz}</h2>
             </div>
           </SwiperSlide>
         ))}

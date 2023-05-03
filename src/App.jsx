@@ -21,6 +21,7 @@ import TelNumbers from './components/TelNumbers/TelNumbers';
 import axios from 'axios';
 import ProductCtg from './page/Products/ProductCtg';
 import SubCategory from './components/SubCategory/SubCategory';
+import Error404 from './components/Error/Error404';
 
 function App() {
   const [userData, setUserData] = React.useState(JSON.parse(localStorage.getItem("userData")) || {})
@@ -30,7 +31,7 @@ function App() {
   const [telInfo, setTelInfo] = React.useState(false)
   const [open, setOpen] = React.useState(false);
 
-  const [lang, setLang] = React.useState('ru')
+  const [lang, setLang] = React.useState('uz')
   const [page1Lang, setPage1Lang] = React.useState([])
   const [page2Lang, setPage2Lang] = React.useState()
 
@@ -90,32 +91,34 @@ function App() {
   }, [lang])
 
   return (
-    <StateContext.Provider value={{ type, setType, subCtg_id, setSubCtg_id, page2Lang, lang, setLang, showSubCtg, setShowSubCtg, telInfo, setTelInfo, userData, setUserData, open, openChangePassword, setOpenChangePassword, handleOpenBasket, handleOpen, setOpen, state, setState, handleClose, userInfo, setUserInfo, openEditUser, setOpenEditUser }}>
-      <div className="App">
-        <Nav language={page1Lang?.header} />
-        <div className="w-full container desktop:hidden tablet:hidden mobile:flex justify-center mt-2">
-          <Search />
-        </div>
-        <SubCategory />
-        <Routes>
-          <Route path='/' element={<Home language={page1Lang?.page} />} />
-          <Route path='/products/:id' element={<Products />} />
-          <Route path='/productCtg/:id' element={<ProductCtg />} />
-          <Route path='/location' element={<Location />} />
-          <Route path='/liked' element={<LikedMobile language={page1Lang?.header} />} />
-          <Route path='/productdetail/:id' element={<ProductDetail />} />
-          <Route path='/aksi' element={<Aksi />} />
-        </Routes>
-        <Register />
-        <EditUserInfo language={page1Lang?.header} />
-        <ChangePassword language={page1Lang?.header} />
-        <Basket setState={setState} state={state} language={page1Lang?.header} />
-        <Footer language={page1Lang?.footer} />
-        <ScrollTop />
-        <TelNumbers />
-        <MenuBar language={page1Lang?.header} />
+  <StateContext.Provider value={{ type, setType, subCtg_id, setSubCtg_id, page2Lang, lang, setLang, showSubCtg, setShowSubCtg, telInfo, setTelInfo, userData, setUserData, open, openChangePassword, setOpenChangePassword, handleOpenBasket, handleOpen, setOpen, state, setState, handleClose, userInfo, setUserInfo, openEditUser, setOpenEditUser }}>
+    <div className="App">
+      <Nav language={page1Lang?.header} />
+      <div className="w-full container desktop:hidden tablet:hidden mobile:flex justify-center mt-2">
+        <Search />
       </div>
-    </StateContext.Provider>
+      <SubCategory />
+      <Routes>
+        <Route path='/' element={<Home language={page1Lang?.page} />} />
+        <Route path='/products/:id' element={<Products />} />
+        <Route path='/productCtg/:id' element={<ProductCtg />} />
+        <Route path='/location' element={<Location />} />
+        <Route path='/liked' element={<LikedMobile language={page1Lang?.header} />} />
+        <Route path='/productdetail/:id' element={<ProductDetail />} />
+        <Route path='/aksi' element={<Aksi />} />
+        <Route path='/*' element={<Error404/>} />
+        <Route path='/error' element={<Error404/>} />
+      </Routes>
+      <Register />
+      <EditUserInfo language={page1Lang?.header} />
+      <ChangePassword language={page1Lang?.header} />
+      <Basket setState={setState} state={state} language={page1Lang?.header} />
+      <Footer language={page1Lang?.footer} />
+      <ScrollTop />
+      <TelNumbers />
+      <MenuBar language={page1Lang?.header} />
+    </div>
+  </StateContext.Provider>
   );
 }
 

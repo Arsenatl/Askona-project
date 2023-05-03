@@ -34,7 +34,7 @@ function Color({ data }) {
                                     <div className="h-10 flex justify-between border-2 border-solid border-gray-300 items-center px-2 rounded mt-3 cursor-pointer">
                                         <div className="flex items-center">
                                             <img className="mr-2 w-5" src={`https://api.basito.uz${data?.color[mainColorId].color.img}`} alt="img" />
-                                            <h2>{lang === 'ru' ? data?.color?.[mainColorId]?.color?.name_ru : data?.color?.[mainColorId]?.color?.name_uz}</h2>
+                                            <p>{lang === 'ru' ? data?.color?.[mainColorId]?.color?.name_ru : data?.color?.[mainColorId]?.color?.name_uz}</p>
                                         </div>
                                         <MdKeyboardArrowRight className='text-[#407CD3]' />
                                     </div>

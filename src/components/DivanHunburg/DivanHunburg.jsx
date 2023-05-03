@@ -18,7 +18,7 @@ function DivanHunburg({ data, language, languageDel }) {
   const [addToProSaved] = useAddProductToSavedMutation()
   const { data: proSaved } = useSavedQuery();
   const { userData, handleOpen, setTelInfo, lang } = useContext(StateContext)
-
+// console.log(data.name_ru);
 
   // add To basket
   const addToBasket = () => {
@@ -88,15 +88,15 @@ function DivanHunburg({ data, language, languageDel }) {
         </div>
 
         <div className="mt-9">
-          <h1>{language?.hajm} ({language?.dan}):</h1>
+          <h3>{language?.hajm} ({language?.dan}):</h3>
           <div className="border-b-2 mt-4">
-            <h1>{data.size}</h1>
+            <h3>{data.size}</h3>
           </div>
 
         </div>
         <div className="mt-7">
           {data?.color ? (
-            <div><h1>{language?.rang}:</h1>
+            <div><h3>{language?.rang}:</h3>
               <Color data={data} /></div>
           ) : (<></>)}
           <div>

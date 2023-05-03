@@ -1,7 +1,6 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /error
 
 Sitemap: http://www.basito.uz/sitemap.xml
+Host: http://www.basito.uz/

@@ -9,7 +9,7 @@ export default function Sidebar({ languageDel, setState }) {
     <div className="bg-white desktop:w-[604px] tablet:w-[604px] mobile:w-screen h-full">
       <div>
         <div className="said_top">
-          <h1>{languageDel?.yetkazish}</h1>
+          <h2 className="text-[24px] font-[700]">{languageDel?.yetkazish}</h2>
           <button onClick={() => setState({ right: false })}>
             <HiXMark className="text-[#407CD3] text-2xl" />
           </button>
@@ -27,7 +27,7 @@ export default function Sidebar({ languageDel, setState }) {
             </div>
           </div>
           <div className="lastdown">
-            <h1>{languageDel?.olibketish}</h1>
+            <h2 className="text-[24px] font-[700]">{languageDel?.olibketish}</h2>
             <div className="downlist">
               <p>
                 {languageDel?.olibketishmumkin}
@@ -43,7 +43,7 @@ export default function Sidebar({ languageDel, setState }) {
                 </li>
               </ul>
               <div className="our4">
-                <h1>{languageDel?.xizmatqoida}</h1>
+                <h2 className="text-[24px] font-[700]">{languageDel?.xizmatqoida}</h2>
                 <p>
                   {languageDel?.chipta}
                 </p>
